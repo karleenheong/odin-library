@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 30px;
+  margin: 20px;
+  justify-content: center;
+}
+
+.bookDiv {
+  width: 200px;
+  height: 300px;
+  overflow: hidden;
+  background-color: beige;
+  border-radius: 10px;
+  box-shadow: 5px 5px 30px grey;
+  line-height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* border-left: 10px solid rgb(75, 17, 17); */
+}
+
+.bookTextDiv {
+  display: flex;
+  font-family: Verdana, sans-serif;
+  text-align: center;
+  padding: 40px 40px 0 40px;
+  align-self: center;
+  text-shadow: 0.5px 0.5px #5a5a5a;
+}
+
+.btnDiv {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+}
+
+.removeBtn,
+.readBtn {
+  font-family: Verdana, sans-serif;
+  font-size: 10px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 15px;
+  align-self: space-between;
+}
+
+.removeBtn {
+  background-color: rgb(252, 169, 169);
+}
+
+.readBtn {
+  background-color: rgb(175, 254, 175);
+}
+
+#newBookBtn {
+  padding: 15px 30px;
+  font-size: 20px;
+  font-weight: 600;
+  border: 2px black solid;
+  align-self: center;
+  background-color: rgb(200, 200, 200);
+  border-radius: 15px;
+}
+
+#myForm {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+#formContent {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 200px 300px;
+  grid-template-rows: repeat(4, 30px);
+  font-weight: bold;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+#myForm button {
+  padding: 10px 20px;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 15px;
+  align-self: center;
+}
+
+#formContent input[type="text"] {
+  background-color: rgb(240, 240, 240);
+  border: none;
+}
+
+#formContent label {
+  text-align: right;
+  margin-right: 10px;
+}
+
+#formContent input[type="checkbox"] {
+  height: 22px;
+  width: 22px;
+}
+
+#successText {
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* div {
+  border: 1px solid purple;
+} */
