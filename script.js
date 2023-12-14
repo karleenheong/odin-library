@@ -2,36 +2,39 @@ const myLibrary = [];
 const IS_READ = "finished reading";
 const NOT_READ = "not read yet";
 
-function Book(title, author, pages, read){
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Book {
+  constructor(title, author, pages, read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 
-  let readStatus = null;
+    this.readText = null;
 
-  if(this.read){
-    readStatus = IS_READ;
-  } else {
-    readStatus = NOT_READ;
-  }
-
-  this.info = function(){
-    return this.title + " by " + this.author + ", " + this.pages + " pages, " + readStatus;
-  }
-
-  this.toggleRead = function(){
-    if(readStatus === IS_READ){
-      readStatus = NOT_READ;
+    if(this.read){
+      this.readText = IS_READ;
     } else {
-      readStatus = IS_READ;
+      this.readText = NOT_READ;
+    }
+  }
+  
+  get info(){
+    return this.title + " by " + this.author + ", " + this.pages + " pages, " + this.readText;
+  }
+
+  toggleRead(){
+    if(this.readText === IS_READ){
+      this.readText = NOT_READ;
+    } else {
+      this.readText = IS_READ;
     }
   }
 
-  this.getReadStatus = function(){
-    return readStatus;
+  get getReadText() {
+    return this.readText;
   }
 }
+
 
 function addBookToLibrary(book){
   myLibrary.push(book);
@@ -89,7 +92,7 @@ function updateLibraryDisplay(){
     myDiv.className = "bookDiv";
     const textDiv = document.createElement("div");
     textDiv.className = "bookTextDiv";
-    textDiv.textContent = myLibrary[i].info();
+    textDiv.textContent = myLibrary[i].info;
     myDiv.appendChild(textDiv);
 
     const btnDiv = document.createElement("div");
@@ -99,7 +102,7 @@ function updateLibraryDisplay(){
     const readBtn = document.createElement("button");
     readBtn.className = "readBtn";
     readBtn.addEventListener("click", toggleReadBtn);
-    if(myLibrary[i].getReadStatus() === IS_READ){
+    if(myLibrary[i].getReadText === IS_READ){
       readBtn.textContent = "Mark Unread";
       readBtn.style.backgroundColor = "rgb(247, 197, 136)";
     } else {
