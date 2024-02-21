@@ -143,11 +143,13 @@ const readStatus = document.querySelector("#readStatus");
 const successText = document.querySelector("#successText");
 
 submitBookBtn.addEventListener("click", function(e) {
-  e.preventDefault();
-  const newBook = new Book(bookTitleInput.value, bookAuthor.value, +numPages.value, readStatus.checked);
-  addBookToLibrary(newBook);
-  updateLibraryDisplay();
-  hideForm();
-  myForm.reset();
-  successText.textContent = "Success. Your book has been added!";
+  if(!(bookTitleInput.value === "" || bookAuthor.value === "" || numPages.value === "")){
+    e.preventDefault();
+    const newBook = new Book(bookTitleInput.value, bookAuthor.value, +numPages.value, readStatus.checked);
+    addBookToLibrary(newBook);
+    updateLibraryDisplay();
+    hideForm();
+    myForm.reset();
+    successText.textContent = "Success. Your book has been added!";
+  }
 });

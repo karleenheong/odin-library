@@ -18,11 +18,11 @@
       <p>Fill in the fields to add your new book!</p>
       <div id="formContent">
         <label for="bookTitle">Book Title: </label>
-        <input type="text" id="bookTitle">
+        <input type="text" id="bookTitle" required minlength="1">
         <label for="bookAuthor">Author: </label>
-        <input type="text" id="bookAuthor">
+        <input type="text" id="bookAuthor" required minlength="1">
         <label for="numPages">Number of Pages: </label>
-        <input type="text" id="numPages">
+        <input type="number" id="numPages" required minlength="1">
         <label for="readStatus">Already read?</label>
         <input type="checkbox" id="readStatus">
       </div>
